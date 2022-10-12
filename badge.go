@@ -61,10 +61,9 @@ func Badge() {
 		myNameIsRainbow(YourName)
 		logo()
 		// screenFlicker()
-		if quit {
-			break
-		}
-		logo()
+		//if quit {
+		//break
+		//}
 		//blinkyRainbow(YourTitle1, YourTitle2)
 		//if quit {
 		//break
