@@ -61,7 +61,6 @@ func Badge() {
 		//break
 		//}
 		myNameIsRainbow(YourName)
-		logo()
 		if quit {
 			// reset loop if the button pressed was a
 			if button == "a" {
@@ -69,10 +68,11 @@ func Badge() {
 				button = ""
 			}
 		}
-		// screenFlicker()
 		if quit {
 			break
 		}
+		logo()
+		// screenFlicker()
 		//blinkyRainbow(YourTitle1, YourTitle2)
 		//if quit {
 		//break
