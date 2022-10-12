@@ -3,6 +3,6 @@
 
 
 while true; do
-  git pull | grep "remote: " && make flash
+  git pull | grep "remote: " && echo "flashing.." && make flash
   sleep 1
 done
