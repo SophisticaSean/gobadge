@@ -75,8 +75,7 @@ func main() {
 	speaker.High()
 
 	for {
-		// Badge()
-		CO2Monitor()
+		Badge()
 		switch menu() {
 		case 0:
 			Badge()
