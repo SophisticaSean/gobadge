@@ -59,8 +59,8 @@ func Badge() {
 		//if quit {
 		//break
 		//}
-		//myNameIsRainbow(YourName)
-		screenFlicker()
+		myNameIsRainbow(YourName)
+		// screenFlicker()
 		if quit {
 			break
 		}
