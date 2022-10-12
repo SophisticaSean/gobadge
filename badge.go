@@ -59,6 +59,7 @@ func Badge() {
 		//break
 		//}
 		myNameIsRainbow(YourName)
+		logo()
 		// screenFlicker()
 		if quit {
 			break
