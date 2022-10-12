@@ -5,13 +5,12 @@ package main
 // tinygo flash -target pybadge -ldflags="-X main.YourName=@myontwitter -X main.YourTitle1='Amazing human' -X main.YourTitle2='also kind'"
 //
 // See Makefile for more info.
-//
 var (
 	YourName, YourTitle1, YourTitle2 string
 )
 
 const (
-	DefaultName   = "Sean Lewis"
+	DefaultName   = "Sean"
 	DefaultTitle1 = "Custodia"
 	DefaultTitle2 = "Bank"
 )
