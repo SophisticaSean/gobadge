@@ -59,7 +59,8 @@ func Badge() {
 		//if quit {
 		//break
 		//}
-		myNameIsRainbow(YourName)
+		//myNameIsRainbow(YourName)
+		screenFlicker()
 		if quit {
 			break
 		}
@@ -146,6 +147,13 @@ func myNameIsRainbow(name string) {
 		//if quit == true {
 		//break
 		//}
+	}
+}
+
+func screenFlicker() {
+	for {
+		display.FillScreen(colors[WHITE])
+		display.FillScreen(colors[BLACK])
 	}
 }
 
