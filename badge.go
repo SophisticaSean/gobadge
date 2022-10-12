@@ -122,7 +122,7 @@ func myNameIsRainbow(name string) {
 	gophersAvail := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"}
 	oldGophers := ""
 
-	w32, _ := tinyfont.LineWidth(&freesans.Bold12pt7b, name)
+	w32, _ := tinyfont.LineWidth(&freesans.Bold18pt7b, name)
 	old_gopher_x := int16(0)
 	for {
 		// pick gophers for animation
@@ -132,7 +132,7 @@ func myNameIsRainbow(name string) {
 
 		for i := 0; i < 40; i++ {
 			x := int16((WIDTH + 48) - i*7)
-			tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
+			tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, x, 110, selectedGophers, getRainbowRGB(uint8((i+10)*12)))
 			old_gopher_x = x
