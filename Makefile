@@ -18,7 +18,10 @@ flash-gcus: prepare-gcus perform-flash
 prepare-tinygo:
 	go run cmd/main.go -conf=tinygo
 
-flash-tinygo: prepare-tinygo perform-flash
+prepare-linkedin:
+	go run cmd/main.go -conf=linkedin
+
+flash-tinygo: prepare-linkedin perform-flash
 
 perform-flash:
-	tinygo flash -size short -target pybadge -conf=linkedin -ldflags="-X main.YourName='$(NAME)' -X main.YourTitle1='$(TITLE1)' -X main.YourTitle2='$(TITLE2)'" .
+	tinygo flash -size short -target pybadge -ldflags="-X main.YourName='$(NAME)' -X main.YourTitle1='$(TITLE1)' -X main.YourTitle2='$(TITLE2)'" .
