@@ -116,7 +116,7 @@ func myNameIs(name string) {
 	display.FillRectangle(30, 4, int16(w32+20), 25, colors[WHITE])
 
 	// my name is text
-	tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32))/2, 24, "HELLO", colors[BLACK])
+	tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32))/2, 24, "GOWEST", colors[BLACK])
 
 	// middle text
 	w32, _ = tinyfont.LineWidth(&freesans.Bold9pt7b, name)
