@@ -113,6 +113,7 @@ func myNameIs(name string) {
 	tinyfont.WriteLine(&display, &freesans.Bold9pt7b, (WIDTH-int16(w32))/2, 72, name, colors[BLACK])
 
 	// gophers
+
 	// tinyfont.WriteLine(&display, &gophers.Regular32pt, WIDTH-48, 110, "BE", []color.RGBA{getRainbowRGB(100), getRainbowRGB(200)})
 }
 
