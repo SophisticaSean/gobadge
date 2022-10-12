@@ -43,6 +43,7 @@ var (
 func Badge() {
 	setNameAndTitle()
 	quit = false
+	button = ""
 	display.FillScreen(colors[BLACK])
 
 	rainbow = make([]color.RGBA, 256)
@@ -60,11 +61,17 @@ func Badge() {
 		//}
 		myNameIsRainbow(YourName)
 		logo()
-		quit = false
+		if quit {
+			// reset loop if the button pressed was a
+			if button == "a" {
+				quit = false
+				button = ""
+			}
+		}
 		// screenFlicker()
-		//if quit {
-		//break
-		//}
+		if quit {
+			break
+		}
 		//blinkyRainbow(YourTitle1, YourTitle2)
 		//if quit {
 		//break
@@ -141,6 +148,12 @@ func myNameIsRainbow(name string) {
 			oldGophers = selectedGophers
 			pressed, _ = buttons.Read8Input()
 			if pressed&machine.BUTTON_SELECT_MASK > 0 {
+				button = "select"
+				quit = true
+				break
+			}
+			if pressed&machine.BUTTON_A_MASK > 0 {
+				button = "a"
 				quit = true
 				break
 			}
