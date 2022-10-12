@@ -114,7 +114,6 @@ func myNameIs(name string) {
 
 	// gophers
 	// tinyfont.WriteLine(&display, &gophers.Regular32pt, WIDTH-48, 110, "BE", []color.RGBA{getRainbowRGB(100), getRainbowRGB(200)})
-
 }
 
 func myNameIsRainbow(name string) {
