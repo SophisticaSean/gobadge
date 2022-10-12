@@ -110,7 +110,7 @@ func myNameIs(name string) {
 	display.FillRectangle(0, HEIGHT-2*r-1, WIDTH, r, colors[RED])
 
 	// top text : my NAME is
-	w32, _ := tinyfont.LineWidth(&freesans.Bold12pt7b, "HELLO")
+	w32, _ := tinyfont.LineWidth(&freesans.Bold12pt7b, "GOWEST")
 
 	// top band white
 	display.FillRectangle(30, 4, int16(w32+20), 25, colors[WHITE])
