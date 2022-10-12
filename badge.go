@@ -43,7 +43,7 @@ var (
 func Badge() {
 	setNameAndTitle()
 	quit = false
-	button = ""
+	button := ""
 	display.FillScreen(colors[BLACK])
 
 	rainbow = make([]color.RGBA, 256)
