@@ -38,12 +38,13 @@ var (
 	rainbow []color.RGBA
 	pressed uint8
 	quit    bool
+	button  string
 )
 
 func Badge() {
 	setNameAndTitle()
 	quit = false
-	button := ""
+	button = ""
 	display.FillScreen(colors[BLACK])
 
 	rainbow = make([]color.RGBA, 256)
