@@ -29,14 +29,16 @@ const (
 )
 
 var colors = []color.RGBA{
-	color.RGBA{0, 0, 0, 255},
-	color.RGBA{255, 255, 255, 255},
-	color.RGBA{255, 0, 0, 255},
+	{0, 0, 0, 255},
+	{255, 255, 255, 255},
+	{255, 0, 0, 255},
 }
 
-var rainbow []color.RGBA
-var pressed uint8
-var quit bool
+var (
+	rainbow []color.RGBA
+	pressed uint8
+	quit    bool
+)
 
 func Badge() {
 	setNameAndTitle()
@@ -111,7 +113,8 @@ func myNameIs(name string) {
 	tinyfont.WriteLine(&display, &freesans.Bold9pt7b, (WIDTH-int16(w32))/2, 72, name, colors[BLACK])
 
 	// gophers
-	//tinyfont.WriteLine(&display, &gophers.Regular32pt, WIDTH-48, 110, "BE", []color.RGBA{getRainbowRGB(100), getRainbowRGB(200)})
+	// tinyfont.WriteLine(&display, &gophers.Regular32pt, WIDTH-48, 110, "BE", []color.RGBA{getRainbowRGB(100), getRainbowRGB(200)})
+
 }
 
 func myNameIsRainbow(name string) {
