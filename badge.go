@@ -142,22 +142,22 @@ func myNameIsRainbow(name string) {
 
 		for i := 0; i < 40; i++ {
 			x := int16((WIDTH + 48) - i*7)
-			tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
-			tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
+			// tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
+			// tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, x, 110, selectedGophers, getRainbowRGB(uint8((i+10)*12)))
 			old_gopher_x = x
 			oldGophers = selectedGophers
-			//pressed, _ = buttons.Read8Input()
-			//if pressed&machine.BUTTON_SELECT_MASK > 0 {
-			//button = "select"
-			//quit = true
-			//break
-			//}
-			//if pressed&machine.BUTTON_A_MASK > 0 {
-			//button = "a"
-			//quit = true
-			//break
-			//}
+			pressed, _ = buttons.Read8Input()
+			if pressed&machine.BUTTON_SELECT_MASK > 0 {
+				button = "select"
+				quit = true
+				break
+			}
+			if pressed&machine.BUTTON_A_MASK > 0 {
+				button = "a"
+				quit = true
+				break
+			}
 		}
 
 		if quit == true {
