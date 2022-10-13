@@ -140,10 +140,10 @@ func myNameIsRainbow(name string) {
 		// gopher2 := gophersAvail[rand.Intn(len(gophersAvail))]
 		selectedGophers := fmt.Sprintf("%s%s", gopher1, "")
 		currentColor := getRainbowRGB(uint8(rand.Intn(40) * 12))
-		tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, currentColor)
 
 		for i := 0; i < 40; i++ {
 			x := int16((WIDTH + 48) - i*7)
+			tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, x, 110, selectedGophers, currentColor)
 			old_gopher_x = x
