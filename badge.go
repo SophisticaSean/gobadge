@@ -130,7 +130,7 @@ func myNameIs(name string) {
 func myNameIsRainbow(name string) {
 	myNameIs(name)
 	gophersAvail := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"}
-	oldGophers := ""
+	// oldGophers := ""
 
 	// w32, _ := tinyfont.LineWidth(&freesans.Bold18pt7b, name)
 	// old_gopher_x := int16(0)
