@@ -245,7 +245,13 @@ func scroll(topline, middleline, bottomline string) {
 
 func logo() {
 	display.FillRectangleWithBuffer(0, 0, WIDTH, HEIGHT, logoRGBA)
-	time.Sleep(logoDisplayTime)
+	for {
+		pressed, _ = buttons.Read8Input()
+		if pressed&machine.BUTTON_A_MASK > 0 {
+			break
+		}
+		time.Sleep(50 * time.Millisecond)
+	}
 }
 
 func setNameAndTitle() {
