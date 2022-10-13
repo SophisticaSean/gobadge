@@ -147,7 +147,7 @@ func myNameIsRainbow(name string) {
 			tinyfont.WriteLine(&display, &gophers.Regular58pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &freesans.Bold18pt7b, nameWidth, 64, name, getRainbowRGB(uint8(i*12)))
 			tinyfont.WriteLine(&display, &gophers.Regular58pt, x, 110, selectedGophers, currentColor)
-			time.Sleep(50 * time.Millisecond)
+			time.Sleep(100 * time.Millisecond)
 			old_gopher_x = x
 			oldGophers = selectedGophers
 			pressed, _ = buttons.Read8Input()
