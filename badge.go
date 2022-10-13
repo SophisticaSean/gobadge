@@ -130,23 +130,23 @@ func myNameIs(name string) {
 func myNameIsRainbow(name string) {
 	myNameIs(name)
 	gophersAvail := []string{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P"}
-	// oldGophers := ""
+	oldGophers := ""
 
-	// w32, _ := tinyfont.LineWidth(&freesans.Bold18pt7b, name)
-	// old_gopher_x := int16(0)
+	w32, _ := tinyfont.LineWidth(&freesans.Bold18pt7b, name)
+	old_gopher_x := int16(0)
 	for {
 		// pick gophers for animation
 		gopher1 := gophersAvail[rand.Intn(len(gophersAvail))]
 		gopher2 := gophersAvail[rand.Intn(len(gophersAvail))]
 		selectedGophers := fmt.Sprintf("%s%s", gopher1, gopher2)
+		tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(rand.Intn(40)*12)))
 
 		for i := 0; i < 40; i++ {
 			x := int16((WIDTH + 48) - i*7)
-			// tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, getRainbowRGB(uint8(i*12)))
-			// tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
+			tinyfont.WriteLine(&display, &gophers.Regular32pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &gophers.Regular32pt, x, 110, selectedGophers, getRainbowRGB(uint8((i+10)*12)))
-			// old_gopher_x = x
-			// oldGophers = selectedGophers
+			old_gopher_x = x
+			oldGophers = selectedGophers
 			pressed, _ = buttons.Read8Input()
 			if pressed&machine.BUTTON_SELECT_MASK > 0 {
 				button = "select"
