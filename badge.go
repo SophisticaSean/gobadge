@@ -137,8 +137,8 @@ func myNameIsRainbow(name string) {
 	for {
 		// pick gophers for animation
 		gopher1 := gophersAvail[rand.Intn(len(gophersAvail))]
-		gopher2 := gophersAvail[rand.Intn(len(gophersAvail))]
-		selectedGophers := fmt.Sprintf("%s%s", gopher1, gopher2)
+		// gopher2 := gophersAvail[rand.Intn(len(gophersAvail))]
+		selectedGophers := fmt.Sprintf("%s%s", gopher1, "")
 		currentColor := getRainbowRGB(uint8(rand.Intn(40) * 12))
 		tinyfont.WriteLine(&display, &freesans.Bold18pt7b, (WIDTH-int16(w32))/2, 72, name, currentColor)
 
@@ -159,7 +159,7 @@ func myNameIsRainbow(name string) {
 				quit = true
 				break
 			}
-			time.Sleep(30 * time.Millisecond)
+			time.Sleep(100 * time.Millisecond)
 		}
 
 		if quit == true {
