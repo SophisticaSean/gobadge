@@ -159,7 +159,7 @@ func myNameIsRainbow(name string) {
 				quit = true
 				break
 			}
-			time.Sleep(1 * time.Millisecond)
+			time.Sleep(30 * time.Millisecond)
 		}
 
 		if quit == true {
