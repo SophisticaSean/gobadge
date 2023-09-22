@@ -110,13 +110,13 @@ func myNameIs(name string) {
 	display.FillRectangle(0, HEIGHT-2*r-1, WIDTH, r, colors[RED])
 
 	// top text : my NAME is
-	w32, _ := tinyfont.LineWidth(&freesans.Bold12pt7b, "GOWEST")
+	w32, _ := tinyfont.LineWidth(&freesans.Bold12pt7b, "HELLO")
 
 	// top band white
-	display.FillRectangle(20, 4, int16(w32+20), 25, colors[WHITE])
+	display.FillRectangle(30, 4, int16(w32+20), 25, colors[WHITE])
 
 	// my name is text
-	tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32))/2, 24, "GOWEST", colors[BLACK])
+	tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32))/2, 24, "HELLO", colors[BLACK])
 
 	// middle text
 	w32, _ = tinyfont.LineWidth(&freesans.Bold9pt7b, name)
@@ -147,7 +147,7 @@ func myNameIsRainbow(name string) {
 			tinyfont.WriteLine(&display, &gophers.Regular58pt, old_gopher_x, 110, oldGophers, colors[BLACK])
 			tinyfont.WriteLine(&display, &freesans.Bold18pt7b, nameWidth, 64, name, getRainbowRGB(uint8(i*12)))
 			tinyfont.WriteLine(&display, &gophers.Regular58pt, x, 110, selectedGophers, currentColor)
-			time.Sleep(100 * time.Millisecond)
+			time.Sleep(10 * time.Millisecond)
 			old_gopher_x = x
 			oldGophers = selectedGophers
 			pressed, _ = buttons.Read8Input()
@@ -208,7 +208,14 @@ func blinkyRainbow(topline, bottomline string) {
 	for i := int16(0); i < 20; i++ {
 		// show black text
 		tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32top))/2, 50, topline, getRainbowRGB(uint8(i*12)))
-		tinyfont.WriteLine(&display, &freesans.Bold12pt7b, (WIDTH-int16(w32bottom))/2, 100, bottomline, getRainbowRGB(uint8(i*12)))
+		tinyfont.WriteLine(
+			&display,
+			&freesans.Bold12pt7b,
+			(WIDTH-int16(w32bottom))/2,
+			100,
+			bottomline,
+			getRainbowRGB(uint8(i*12)),
+		)
 
 		pressed, _ = buttons.Read8Input()
 		if pressed&machine.BUTTON_SELECT_MASK > 0 {
